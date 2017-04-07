@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * This file provides the installl functionality for user user_login_redirect.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function practica_1_schema() {
+  $schema['user_login_redirect'] = array(
+    'description' => '',
+    'fields' => array(
+      'rid' => array(
+        'description' => 'The role id',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'path' => array(
+        'description' => 'The redirect path',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'weight' => array(
+        'description' => 'The weigth',
+        'type' => 'int',
+        'unsigned' => FALSE,
+        'not null' => TRUE,
+      ),
+    ),
+    'primary key' => array('rid'),
+  );
+  return $schema;
+}
