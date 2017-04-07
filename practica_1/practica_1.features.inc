@@ -17,6 +17,14 @@ function practica_1_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'noticia' => array(
+      'name' => t('Noticia'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Noticia'),
+      'help' => '',
+    ),
   );
   drupal_alter('node_info', $items);
   return $items;
